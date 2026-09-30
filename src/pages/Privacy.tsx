@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FadeIn } from '../components/Shared';
 import { Shield, Lock, FileText, UserCheck, Video, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -42,7 +43,13 @@ export const Privacy = () => {
   ];
 
   return (
-    <main className="pt-32 pb-24 px-4 sm:px-6 md:px-12 bg-brand-offwhite min-h-screen">
+    <>
+      <Helmet>
+        <title>Política de Privacidade e Termos de Uso | Patrícia Gavazza</title>
+        <meta name="description" content="Leia nossa política de privacidade e entenda como seus dados e o sigilo das suas sessões de terapia online são protegidos rigorosamente." />
+        <link rel="canonical" href="https://www.patriciagavazza.com.br/privacidade" />
+      </Helmet>
+      <main className="pt-32 pb-24 px-4 sm:px-6 md:px-12 bg-brand-offwhite min-h-screen">
       <div className="max-w-4xl mx-auto">
         
         {/* Breadcrumb / Back Navigation */}
@@ -121,5 +128,6 @@ export const Privacy = () => {
 
       </div>
     </main>
+    </>
   );
 };
